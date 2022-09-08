@@ -60,9 +60,7 @@ class Solution:
         self.path.append(self.level.start)
         self.step()
         # if self.check_valid_state():
-        while self.level.scroll.next_state():
-            if self.level.scroll.state == 'End':
-                break
+        while self.level.scroll.next_state() and self.level.scroll.state != 'End':
             self.step()
         print(self.path)
         self.check_win()
